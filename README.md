@@ -1,4 +1,4 @@
-# VS Code Redis
+# VS Code Glide
 ### Extension for Visual Studio Code 
 [![Build Status](https://travis-ci.org/vitorsalgado/vscode-glide.svg?branch=master)](https://travis-ci.org/vitorsalgado/vscode-glide)
 [![Dependency Status](https://david-dm.org/vitorsalgado/vscode-glide.svg)](https://david-dm.org/vitorsalgado/vscode-glide)
