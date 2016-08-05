@@ -22,12 +22,12 @@ This extension has no support for commands that require user imput after executi
 These commands are executed using the parameter `--non-interactive`. 
 
 ## Available Glide commands on Command Palette:
-* `Create -> glide create (init)`
+* `Create | Init -> glide create (init)`
 * `Get -> glide get`
-* `Remove -> glide remove (rm)`
+* `Remove | rm -> glide remove (rm)`
 * `Update -> glide update (up)`
 * `Install -> glide install`
-* `Test -> glide novendor (nv)`
+* `Test | Novendor -> glide novendor (nv)`
 * `Name -> glide name`
 * `Tree -> glide tree`
 * `List -> glide list`
