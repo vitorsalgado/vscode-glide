@@ -1,0 +1,126 @@
+{
+  "name": "vscode-glide",
+  "displayName": "VS Code Glide",
+  "description": "Adds Glide commands to VS Code Command Palette",
+  "version": "1.0.0",
+  "publisher": "vitorsalgado",
+  "icon": "icon.png",
+  "author": {
+    "name": "Vitor Hugo Salgado",
+    "email": "vsalgadopb@gmail.com",
+    "url": "https://github.com/vitorsalgado/"
+  },
+  "keywords": [
+    "glide",
+    "go",
+    "golang"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vitorsalgado/vscode-glide",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitorsalgado/vscode-glide"
+  },
+  "bugs": {
+    "email": "vsalgadopb@gmail.com",
+    "url": "https://github.com/vitorsalgado/vscode-glide/issues"
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:go",
+    "onCommand:glide.create",
+    "onCommand:glide.get",
+    "onCommand:glide.remove",
+    "onCommand:glide.update",
+    "onCommand:glide.install",
+    "onCommand:glide.test",
+    "onCommand:glide.name",
+    "onCommand:glide.tree",
+    "onCommand:glide.list",
+    "onCommand:glide.help",
+    "onCommand:glide.version"
+  ],
+  "main": "./src/extension",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "yaml",
+        "path": "./snippets/yaml.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "glide.create",
+        "title": "Create | Init",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.get",
+        "title": "Get",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.remove",
+        "title": "Remove | rm",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.update",
+        "title": "Update",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.install",
+        "title": "Install",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.test",
+        "title": "Test | Novendor",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.name",
+        "title": "Name",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.tree",
+        "title": "Tree",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.list",
+        "title": "List",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.help",
+        "title": "Help",
+        "category": "Glide"
+      },
+      {
+        "command": "glide.version",
+        "title": "Version",
+        "category": "Glide"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "jscs": "^3.0.7",
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "fs": "0.0.2",
+    "path": "^0.12.7",
+    "shelljs": "^0.7.3"
+  }
+}

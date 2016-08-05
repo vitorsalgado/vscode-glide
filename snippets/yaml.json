@@ -1,0 +1,10 @@
+{
+	"glide.config": {
+		"prefix": "glide basic configuration",
+		"body": [
+			"package: .",
+			"import: []"
+		],
+		"description": "Glide start configuration file"
+	}
+}
