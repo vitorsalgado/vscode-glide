@@ -2,7 +2,7 @@
   "name": "vscode-glide",
   "displayName": "VS Code Glide",
   "description": "Adds Glide commands to VS Code Command Palette",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "vitorsalgado",
   "icon": "icon.png",
   "author": {

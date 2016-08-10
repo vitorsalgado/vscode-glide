@@ -12,9 +12,11 @@ const yaml = path.join(root, 'glide.yaml');
 const output = vscode.window.createOutputChannel('Glide');
 const statusbar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
 
-const nonInteractive = '--non-interactive';
+const nonInteractive = process.env && typeof process.env.OS === 'string' && process.env.OS.toLowerCase().indexOf('win') > -1
+    ? '--non-interactive'
+    : '';
 
-let create = () => run(`glide create ${nonInteractive}`);
+let create = () => run(`glide init ${nonInteractive}`);
 
 let get = () =>
     checkYaml().then(() =>
@@ -47,6 +49,10 @@ let isAvailable = () => root && which('glide');
 let safeRun = (command) => checkYaml().then(() => run(command));
 
 let run = (command) => new Promise((resolve, reject) => {
+    if (!isAvailable()) {
+        return prompt.warn('Glide is not installed.');
+    }
+
     cd(root);
     showRunningState(command);
     exec(command, (code, err, out) => {
@@ -66,7 +72,7 @@ let checkYaml = () => new Promise((resolve, reject) => {
         prompt.strictPick(['Yes', 'No'], 'Glide workspace is not initialized. Do you want to initialize it?')
             .then((choice) => {
                 if (choice == 'Yes') {
-                    return initialize();
+                    return create();
                 }
 
                 return reject();
